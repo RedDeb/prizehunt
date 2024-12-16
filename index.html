@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Treasure Hunt Adventure">
+    <title>Treasure Hunt Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Timer for periodic pop-ups
+        let popupTimer;
+
+        function showPopup() {
+            const popup = document.getElementById('email-popup');
+            popup.style.display = 'block';
+
+            // Reset timer after showing the popup
+            clearTimeout(popupTimer);
+            popupTimer = setTimeout(showPopup, 20000); // 20 seconds
+        }
+
+        function hidePopup() {
+            document.getElementById('email-popup').style.display = 'none';
+        }
+
+        function startGame() {
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('map').style.display = 'block';
+            showPopup(); // Start the periodic pop-ups
+        }
+        function checkEmailAndHidePopup() {
+    const emailInput = document.querySelector('#email-popup input[type="email"]');
+    const emailValue = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailValue === '' || !emailRegex.test(emailValue)) {
+        alert('Please enter a valid email address to claim your clue.');
+    } else {
+        hidePopup();
+        alert('Your clue has been unlocked! Check your email for details.');
+    }
+}
+</script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">Treasure Hunt Adventure</div>
+    </header>
+
+    <main>
+        <!-- Start Screen -->
+        <section id="start-screen" class="start-screen">
+            <h1>Welcome to the Treasure Hunt Adventure!</h1>
+            <p>Explore the map, uncover hidden treasures, and claim your prizes.</p>
+            <button onclick="startGame()" class="btn">Start the Hunt</button>
+        </section>
+
+        <!-- Interactive Map -->
+        <section id="map" class="map" style="display: none;">
+            <h2>Explore the Map</h2>
+            <div class="map-container">
+                <div class="map-item" onclick="alert('You found a gold coin!')">🏴‍☠️</div>
+                <div class="map-item" onclick="alert('You uncovered a treasure chest!')">💰</div>
+                <div class="map-item" onclick="alert('You found a pirate clue!')">📜</div>
+                <div class="map-item" onclick="alert('You discovered hidden gems!')">💎</div>
+            </div>
+        </section>
+
+        <!-- Email Popup -->
+        <div id="email-popup" class="email-popup" style="display: none;">
+            <div class="popup-content">
+                <h3>Unlock a Treasure Clue!</h3>
+                <p>Enter your email to continue the adventure:</p>
+                <input type="email" placeholder="Your email" required>
+                <button onclick="checkEmailAndHidePopup()" class="btn">Claim Your Clue</button>
+                <button onclick="hidePopup()" class="btn secondary">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Treasure Hunt Adventure. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Start the periodic pop-up timer
+        popupTimer = setTimeout(showPopup, 20000); // 20 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f4e9; /* Sand-like background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.site-header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #006994; /* Ocean blue */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Start Screen Styles */
+.start-screen {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #f0e68c; /* Light golden sand */
+}
+
+.start-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #8b4513; /* Treasure chest brown */
+}
+
+.start-screen p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #4b3621;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #d4af37; /* Gold */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #b8860b; /* Darker gold */
+}
+
+.btn.secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn.secondary:hover {
+    background-color: #999;
+}
+
+/* Map Section Styles */
+.map {
+    padding: 2rem;
+    text-align: center;
+    background: url('https://www.publicdomainpictures.net/pictures/30000/velka/old-treasure-map.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.map h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.map-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-item {
+    background-color: rgba(255, 215, 0, 0.8); /* Translucent gold */
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.map-item:hover {
+    transform: scale(1.1);
+    background-color: rgba(218, 165, 32, 1); /* Solid gold */
+}
+
+/* Popup Styles */
+.email-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+
+.email-popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8b4513;
+}
+
+.email-popup p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.email-popup input {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #006994; /* Ocean blue */
+    color: white;
+    margin-top: 2rem;
+}
